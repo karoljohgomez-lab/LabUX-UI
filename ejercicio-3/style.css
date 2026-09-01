@@ -1,0 +1,139 @@
+/*
+0. Estilos generales
+1. Tipografías
+2. Cabecera
+
+
+
+*/ 
+
+/* 0. Estilos generales */
+*{
+    margin: 0;
+    padding: 0;
+    /* Evita que el ancho se sume al padding */
+    box-sizing: border-box;
+}
+
+:root{
+    --color-principal: #C62493;
+    --color-acento: #93C624;
+    --color-acento2: #2493C6;
+    --color-parrafo: #5B6262;
+}
+
+/* ocultar elementos para las personas pero que google y discapacitados podran ver*/
+.hide-element{
+    display: none;
+}
+
+/* 1. Tipografías */
+h1{
+    font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 75;
+    font-size: 32px;
+    color: var(--color-principal);
+}
+
+h2{
+    font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 75;
+    font-size: 25px;
+    color: var(--color-acento);
+}
+
+h3{
+    font-family: "DynaPuff", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 75;
+    font-size: 18px;
+    color: var(--color-acento);
+}
+
+p{
+    font-family: "Basic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--color-parrafo);
+    text-align: justify;
+}               
+
+/* Cabecera */
+#cabecera-web{
+    /* relleno interno */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #d090bc;
+    align-items: center;
+    /*  border-bottom: grosor estilo color */
+    border-bottom: 3px solid var(--color-principal);
+}
+
+.bt-principal{
+    font-family: "Basic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    text-decoration: none;
+    color: azure;
+    font-size: 16px;
+    background: var(--color-principal);
+    padding: 8px 15px 8px 15px;                                                                                                                                      
+    border-radius: 8px;
+    /*animacion por transición: duración caracteristica animación*/
+    transition: 0.3s all linear;
+}
+
+/* mostrar un cambio cuando pase el apuntador sobre el botón */
+.bt-principal:hover{
+    background: var(--color-acento2);
+    padding: 10px 17px;
+}
+
+/* Alinear imagenes una a lado de otra */
+.flex-element{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* acomodar las imagenes al tamaño de pantalla*/
+img{
+    width: 100%;
+}
+
+
+
+
+
+
+/* ====== para cambios en tamaño de pantalla========= */
+@media (max-width: 600px){
+    #cabecera-web{
+        flex-direction: column;
+    }
+    #cabecera-web > nav{
+        width: 100%;
+    }
+
+    /* para que los botones se alinien al centro*/
+    .bt-principal{
+        display: block;
+        text-align: center;
+        border-radius: 0;
+        border-bottom: 1px solid var(--color-acento);
+    }
+}
